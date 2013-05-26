@@ -1,6 +1,5 @@
 var express = require('express');
 var mail = require("./nodemail");
-var Valores = mongoose.model('ValoresDolarHoy', valoresSchema);
 var app = express();
 
 app.use(express.logger());
@@ -23,7 +22,7 @@ function sendMail(name, subject, text) {
 
 function onError(err) {
     mail.mailOptions.subject = 'DolarHoyServer Info: Error';
-    mail.mailOptions.html = 'ERROR connecting to: ' + uristring + '. ' + err;
+    mail.mailOptions.html = 'ERROR: ' + err;
     mail.sendMail();
     console.log(err);
 }

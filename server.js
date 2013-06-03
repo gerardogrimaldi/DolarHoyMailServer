@@ -22,7 +22,7 @@ function sendMail(name, subject, text) {
 
 function onError(err) {
     mail.mailOptions.subject = 'DolarHoyServer Info: Error';
-    mail.mailOptions.html = 'ERROR: ' + err;
+    mail.mailOptions.html = 'ERROR : ' + err;
     mail.sendMail();
     console.log(err);
 }

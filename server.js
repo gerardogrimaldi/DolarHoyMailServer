@@ -8,8 +8,12 @@ app.get('/mail/:pass/:name/:subject/:text', function(req, res) {
     if (req.params.pass != 'Hola123!') return res.send('Error: Wrong password...');
     try {
         sendMail(req.params.name,req.params.subject, req.params.text);
-    }
-    catch(err) { onError(err); }
+        res.send("Enviado...");
+        }
+    catch(err) { 
+        res.send("Error...");
+        onError(err); 
+        }
 });
 
 app.listen(process.env.PORT);

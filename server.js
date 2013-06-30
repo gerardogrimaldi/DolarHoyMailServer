@@ -20,7 +20,7 @@ app.listen(process.env.PORT);
 
 function sendMail(name, subject, text) {
     mail.mailOptions.subject = 'DolarHoyServer Mensaje del Usuario: ' + name +  ' con Tema : ' + subject;
-    mail.mailOptions.text = subject;
+    mail.mailOptions.text = text;
     mail.sendMail();
 }
 
